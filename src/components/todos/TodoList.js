@@ -1,8 +1,11 @@
 import React from 'react';
 
+
 export function TodoList() {
+    
+
     return (
-        <div
+      <div
             className="h-100 w-full flex items-center justify-center bg-teal-lightest font-sans"
         >
             <div
@@ -23,7 +26,7 @@ export function TodoList() {
                         <input
                             className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-gray-darker"
                             placeholder="Add Todo"
-                            value={this.state.newItem}
+                            value={this.props.input}
                             onChange={e => this.updateInput("newItem", e.target.value)}
 
                         />

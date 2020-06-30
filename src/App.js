@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { TodoList } from './components/todos';
 import { todos } from './data/todos';
 
+
 class App extends Component {
   // Creating a constructor that will have props and super
+ 
   constructor(props){
+    const [item, newItem] = useState("item");
     super(props);
 
     this.state={
       newItem:"",
       list:[]
     }
+  
   }
 
   // Create new Item to todo list
@@ -43,7 +47,8 @@ class App extends Component {
 
 render() {
   return (
-    <div className="App">
+   <div>
+     input is : {this.props.input}
       <TodoList  todos={todos} />
     </div>
   );
