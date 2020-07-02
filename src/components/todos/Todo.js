@@ -54,6 +54,8 @@ export class Todo extends React.Component {
                         className="flex my-8"
                     >
 
+
+
                 <input 
                  className="shadow appearance-none border rounded w-full py-2 px-3 mr-4 text-gray-darker"
                 value={this.state.text} 
