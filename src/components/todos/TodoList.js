@@ -1,5 +1,6 @@
 import React from 'react';
 import { Todo } from './Todo';
+import Todo2 from './Todo2';
 
 export class TodoList extends React.Component {
 
@@ -13,19 +14,39 @@ export class TodoList extends React.Component {
         this.setState({
             todos: [todo,...this.state.todos]
         });
-
-        
     };
 
+    // 
+    toggleComplete = (id) => {
+    this.state({
+    todos: this.state.todos.map( todo => {
+        if(todo.id === id) {
+            return{
+                ...todo,
+                complete: !todo.complete
+            };
+
+        } else {
+            return todo;
+        }
+    })
+})
+
+    }
 
 
-
-    // passing addTodo ass a prop
+    // passing addTodo ass a prop // passing toggle complete prop
     render() {
         return ( 
         <div>
             <Todo onSubmit={this.addTodo} />
-            {JSON.stringify(this.state.todos)}
+            {this.state.todos.map(todo => (
+            <Todo2 
+            key={todo.id} 
+            toggleComplete={() => this.toggleComplete(todo.id)}
+             todo={todo}
+             />   
+            ))}
         </div>
         );
     }

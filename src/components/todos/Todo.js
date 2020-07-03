@@ -23,6 +23,7 @@ export class Todo extends React.Component {
             id:shortid.generate(),
           text: this.state.text,
           complete: false  
+          
         });
 
         
@@ -122,9 +123,6 @@ export class Todo extends React.Component {
                 </div>
             </div>
         </div>
-    );
-} 
-
         </form>    
         );
        
